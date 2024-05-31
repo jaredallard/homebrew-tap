@@ -5,24 +5,23 @@
 class Remarkabledayone < Formula
   desc "A utility to sync pages from a Remarkable 2 tablet to Day One"
   homepage "https://github.com/jaredallard/remarkabledayone"
-  version "0.1.3"
+  version "0.1.4"
   license "AGPL-3.0"
 
   depends_on "imagemagick"
-  depends_on "inkscape"
 
   on_macos do
     on_intel do
-      url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.3/remarkabledayone_0.1.3_darwin_amd64.tar.xz"
-      sha256 "be80b5bc4cd3b7e07ab52f635fc90237a75ae766c8dcd2430defe76c0a184adc"
+      url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.4/remarkabledayone_0.1.4_darwin_amd64.tar.xz"
+      sha256 "553ae2544535e6113f352a6ca39123ae5c9396ab052fd31597cdd69d8dabe918"
 
       def install
         bin.install "remarkabledayone"
       end
     end
     on_arm do
-      url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.3/remarkabledayone_0.1.3_darwin_arm64.tar.xz"
-      sha256 "895ed31e34288b6fc6ee96a4827c16bb53d1174dfc7118d602c161d74e4f4e89"
+      url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.4/remarkabledayone_0.1.4_darwin_arm64.tar.xz"
+      sha256 "eb8d2057bafb7b8c051ad19723e8339d741de649a1607d7bdd033f7cb04446a8"
 
       def install
         bin.install "remarkabledayone"
@@ -33,8 +32,8 @@ class Remarkabledayone < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.3/remarkabledayone_0.1.3_linux_amd64.tar.xz"
-        sha256 "faf4317841c3b741fee21e4b2a40ac2b26c027aecb0986d2d4b3d0783d8cda64"
+        url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.4/remarkabledayone_0.1.4_linux_amd64.tar.xz"
+        sha256 "4b1701112b011532485d98a0d43028e363f07d41ff857202d65ea69c7b4707f5"
 
         def install
           bin.install "remarkabledayone"
@@ -43,13 +42,20 @@ class Remarkabledayone < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.3/remarkabledayone_0.1.3_linux_arm64.tar.xz"
-        sha256 "85135c964a7e78f250627224dadc5a3cebc2201f8f42b83aa9421de1bfbefa8f"
+        url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.4/remarkabledayone_0.1.4_linux_arm64.tar.xz"
+        sha256 "acd92f1381bb337d000063b065282b49c3a0ba7c12707a078c28dab7d5d68b42"
 
         def install
           bin.install "remarkabledayone"
         end
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      Dayone must be installed manually from the app store.
+      Inkscape must be installed manually via `brew install --cask inkscape`.
+    EOS
   end
 end
