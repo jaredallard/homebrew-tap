@@ -5,23 +5,23 @@
 class Remarkabledayone < Formula
   desc "A utility to sync pages from a Remarkable 2 tablet to Day One"
   homepage "https://github.com/jaredallard/remarkabledayone"
-  version "0.1.4"
+  version "0.1.7"
   license "AGPL-3.0"
 
-  depends_on "imagemagick"
+  depends_on "imagemagick" if OS.mac?
 
   on_macos do
-    on_intel do
-      url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.4/remarkabledayone_0.1.4_darwin_amd64.tar.xz"
-      sha256 "553ae2544535e6113f352a6ca39123ae5c9396ab052fd31597cdd69d8dabe918"
+    if Hardware::CPU.intel?
+      url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.7/remarkabledayone_0.1.7_darwin_amd64.tar.gz"
+      sha256 "2abbcf39a8d0fc8f315481352cbfc048eb2d97b9fea0600c4b1038b568d041bf"
 
       def install
         bin.install "remarkabledayone"
       end
     end
-    on_arm do
-      url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.4/remarkabledayone_0.1.4_darwin_arm64.tar.xz"
-      sha256 "eb8d2057bafb7b8c051ad19723e8339d741de649a1607d7bdd033f7cb04446a8"
+    if Hardware::CPU.arm?
+      url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.7/remarkabledayone_0.1.7_darwin_arm64.tar.gz"
+      sha256 "ff6bb6c727c41bebfe1cab6690d5496604fdfc4e1a0d95d9dadbb2347dccb344"
 
       def install
         bin.install "remarkabledayone"
@@ -30,20 +30,20 @@ class Remarkabledayone < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.4/remarkabledayone_0.1.4_linux_amd64.tar.xz"
-        sha256 "4b1701112b011532485d98a0d43028e363f07d41ff857202d65ea69c7b4707f5"
+        url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.7/remarkabledayone_0.1.7_linux_amd64.tar.gz"
+        sha256 "7bdc099ff6faa0c841725d0af6f955e1fcc62f677f5d869eb8eb98406546011c"
 
         def install
           bin.install "remarkabledayone"
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.4/remarkabledayone_0.1.4_linux_arm64.tar.xz"
-        sha256 "acd92f1381bb337d000063b065282b49c3a0ba7c12707a078c28dab7d5d68b42"
+        url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.7/remarkabledayone_0.1.7_linux_arm64.tar.gz"
+        sha256 "0f4a935ff0044125097a74493d7974d7c1b0e1c024a98b04e1e47090c8396ad0"
 
         def install
           bin.install "remarkabledayone"
@@ -56,6 +56,11 @@ class Remarkabledayone < Formula
     <<~EOS
       Dayone must be installed manually from the app store.
       Inkscape must be installed manually via `brew install --cask inkscape`.
+      rmc must be installed manually. Recommend path is to use `uv` to
+      install it:
+
+        brew install uv
+        uv tool install rmc
     EOS
   end
 end
