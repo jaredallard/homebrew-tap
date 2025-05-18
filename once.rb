@@ -5,21 +5,21 @@
 class Once < Formula
   desc "Safely run commands concurrently that do not support it natively"
   homepage "https://github.com/jaredallard/once"
-  version "0.2.1"
+  version "0.2.2"
   license "GPL-3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jaredallard/once/releases/download/v0.2.1/once_0.2.1_darwin_amd64.tar.gz"
-      sha256 "74cd4d33e9925cf335153bf3a7ec5c390a199a09a8c0f220b62359e79073cd05"
+      url "https://github.com/jaredallard/once/releases/download/v0.2.2/once_0.2.2_darwin_amd64.tar.gz"
+      sha256 "77b125a7cefa040d4b9a60a16e2450d34b8873c61fb2042838784d4d8b601538"
 
       def install
         bin.install "once"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jaredallard/once/releases/download/v0.2.1/once_0.2.1_darwin_arm64.tar.gz"
-      sha256 "7df7dd7e735f042c401972e7007a9976cf08a7329b2c7aaf5b0db5ce4e3cc44e"
+      url "https://github.com/jaredallard/once/releases/download/v0.2.2/once_0.2.2_darwin_arm64.tar.gz"
+      sha256 "7c3b5b9afc326c9ad72cf90a61db30ec0305389928295ad452bc4aedaa09c2f3"
 
       def install
         bin.install "once"
@@ -29,15 +29,15 @@ class Once < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/jaredallard/once/releases/download/v0.2.1/once_0.2.1_linux_amd64.tar.gz"
-      sha256 "44bb74210653e80c34f650ced6eebb4bf5380bf65591e6ab77a6fa5f4137625a"
+      url "https://github.com/jaredallard/once/releases/download/v0.2.2/once_0.2.2_linux_amd64.tar.gz"
+      sha256 "aaab4edd0f23bcbdd7021e65faf4ea1241a716e0d54e805b40b59de0253a8f47"
       def install
         bin.install "once"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/jaredallard/once/releases/download/v0.2.1/once_0.2.1_linux_arm64.tar.gz"
-      sha256 "dd39444c758632f0bd711250bad64127c5e917f31a925ffbefbf2db4c75591ed"
+      url "https://github.com/jaredallard/once/releases/download/v0.2.2/once_0.2.2_linux_arm64.tar.gz"
+      sha256 "9c4db11e564cb42f0433a8a5d93a8e15b936ed884b84d959140d5dbf0ee64007"
       def install
         bin.install "once"
       end
