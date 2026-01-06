@@ -5,21 +5,21 @@
 class Once < Formula
   desc "Safely run commands concurrently that do not support it natively"
   homepage "https://github.com/jaredallard/once"
-  version "0.2.2"
+  version "0.2.3"
   license "GPL-3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jaredallard/once/releases/download/v0.2.2/once_0.2.2_darwin_amd64.tar.gz"
-      sha256 "77b125a7cefa040d4b9a60a16e2450d34b8873c61fb2042838784d4d8b601538"
+      url "https://github.com/jaredallard/once/releases/download/v0.2.3/once_0.2.3_darwin_amd64.tar.gz"
+      sha256 "b1da30d2389dfaf17e3501f73986213e07a68b8790be1dc7f83b290011ad72fe"
 
       def install
         bin.install "once"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jaredallard/once/releases/download/v0.2.2/once_0.2.2_darwin_arm64.tar.gz"
-      sha256 "7c3b5b9afc326c9ad72cf90a61db30ec0305389928295ad452bc4aedaa09c2f3"
+      url "https://github.com/jaredallard/once/releases/download/v0.2.3/once_0.2.3_darwin_arm64.tar.gz"
+      sha256 "035eecabc2fa3800a5ca15c601737673677ef577db8a701c4bf79d05d2af1b2b"
 
       def install
         bin.install "once"
@@ -28,16 +28,16 @@ class Once < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/jaredallard/once/releases/download/v0.2.2/once_0.2.2_linux_amd64.tar.gz"
-      sha256 "aaab4edd0f23bcbdd7021e65faf4ea1241a716e0d54e805b40b59de0253a8f47"
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jaredallard/once/releases/download/v0.2.3/once_0.2.3_linux_amd64.tar.gz"
+      sha256 "840247e1f30ed21623ce079af99725d04d8dbbbe23c86c787e637e211ec47e01"
       def install
         bin.install "once"
       end
     end
-    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/jaredallard/once/releases/download/v0.2.2/once_0.2.2_linux_arm64.tar.gz"
-      sha256 "9c4db11e564cb42f0433a8a5d93a8e15b936ed884b84d959140d5dbf0ee64007"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jaredallard/once/releases/download/v0.2.3/once_0.2.3_linux_arm64.tar.gz"
+      sha256 "516f8b2956d0acc06009408e35973713d156b6d4b7750a1fe52ac6d702497f22"
       def install
         bin.install "once"
       end
