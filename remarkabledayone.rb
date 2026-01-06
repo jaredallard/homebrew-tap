@@ -5,23 +5,23 @@
 class Remarkabledayone < Formula
   desc "A utility to sync pages from a Remarkable 2 tablet to Day One"
   homepage "https://github.com/jaredallard/remarkabledayone"
-  version "0.1.8"
+  version "0.1.9"
   license "AGPL-3.0"
 
   depends_on "imagemagick" if OS.mac?
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.8/remarkabledayone_0.1.8_darwin_amd64.tar.gz"
-      sha256 "781a069c1db1f73023c8467683935651c96531cf011b2102710c388a7a0f3297"
+      url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.9/remarkabledayone_0.1.9_darwin_amd64.tar.gz"
+      sha256 "afe9add7c49749747bf531dc652209b24eef29a6aab7545190477a840e26e366"
 
       def install
         bin.install "remarkabledayone"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.8/remarkabledayone_0.1.8_darwin_arm64.tar.gz"
-      sha256 "57d06ee8ee705d6e4018fc2a79c311729531eddd28451a860da41425e20828f8"
+      url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.9/remarkabledayone_0.1.9_darwin_arm64.tar.gz"
+      sha256 "92842d7f3f4f7cbe25ab8fae2d8d74a26c526f7e8d5693a4f239246e8f96e0c7"
 
       def install
         bin.install "remarkabledayone"
@@ -30,24 +30,18 @@ class Remarkabledayone < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.8/remarkabledayone_0.1.8_linux_amd64.tar.gz"
-        sha256 "5ffbf18998f40dc9ac682313b92373b70973ddd9ee469c7146625ace0d0ba85d"
-
-        def install
-          bin.install "remarkabledayone"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.9/remarkabledayone_0.1.9_linux_amd64.tar.gz"
+      sha256 "1fb2f36a08691300169e9079778fd608f22c7a6e677d323ef122c010cf6d7790"
+      def install
+        bin.install "remarkabledayone"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.8/remarkabledayone_0.1.8_linux_arm64.tar.gz"
-        sha256 "9bbbaf24f957dafaca653356c6e7140bd0e7febce88e0ff78bac031414514985"
-
-        def install
-          bin.install "remarkabledayone"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jaredallard/remarkabledayone/releases/download/v0.1.9/remarkabledayone_0.1.9_linux_arm64.tar.gz"
+      sha256 "16b69cdc02803a143e1ef6ca497cce20668ca2657c0191ec35c49c9694be5261"
+      def install
+        bin.install "remarkabledayone"
       end
     end
   end
